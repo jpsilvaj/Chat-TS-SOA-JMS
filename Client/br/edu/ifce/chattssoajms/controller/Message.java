@@ -1,4 +1,4 @@
-package br.edu.ifce.chattssoajms.bean;
+package br.edu.ifce.chattssoajms.controller;
 
 import net.jini.core.entry.Entry;
 import java.util.Date;
@@ -8,10 +8,9 @@ import java.util.Date;
  */
 public class Message implements Entry{
 
-    public String sender;
-    public String receiver;
-    public String message;
-    public Date date;
+	public String name;
+    public String content;
+  
 
     public Message(){
     }
