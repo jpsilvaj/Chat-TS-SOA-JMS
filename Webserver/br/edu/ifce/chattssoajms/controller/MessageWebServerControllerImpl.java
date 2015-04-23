@@ -1,5 +1,6 @@
 package br.edu.ifce.chattssoajms.controller;
 
+import br.edu.ifce.chattssoajms.utils.Constants;
 import br.edu.ifce.chattssoajms.utils.TopicSessionHelper;
 
 import javax.jms.*;
@@ -11,11 +12,11 @@ import javax.naming.NamingException;
  */
 @WebService(endpointInterface = "br.edu.ifce.chattssoajms.controller.MessageWebServerController")
 public class MessageWebServerControllerImpl {
-
+    private TopicSessionHelper topicSessionHelper;
     public void registerMessageIllegal(String message){
         try {
-            TopicSessionHelper topicSessionHelper = new TopicSessionHelper();
-            topicSessionHelper.publishMessageInTopic(message,"topic1");
+            topicSessionHelper = new TopicSessionHelper();
+            topicSessionHelper.publishMessageInTopic(message, Constants.TOPIC_DEFAULT);
         } catch (JMSException e) {
             e.printStackTrace();
         } catch (NamingException e) {

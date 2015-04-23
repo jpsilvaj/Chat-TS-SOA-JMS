@@ -30,30 +30,6 @@ public class ChatClientController{
     }
 
     private static void startupSpaceConnection() {
-        DiscoveryListenerManagement dlm = null;
-        try {
-            dlm = new LookupDiscovery(LookupDiscovery.ALL_GROUPS);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        LeaseRenewalManager lrm = new LeaseRenewalManager();
-        ServiceDiscoveryManager sdm = new ServiceDiscoveryManager(dlm, lrm);
-
-        try {
-            Thread.sleep(500); //need to wait a little bit for the Lookup Service to generate the events to the sdm
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ServiceTemplate srTemplate = new ServiceTemplate(null, new Class[] { ServiceRegistrar.class }, null);
-
-        ServiceItem[] sis = sdm.lookup(srTemplate, 10, null);
-        for(ServiceItem si : sis) {
-            System.out.println("Service Registrar: "+si.serviceID);
-        }
-
-        dlm.terminate();
 
     }
 

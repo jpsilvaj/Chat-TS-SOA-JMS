@@ -40,4 +40,8 @@ public class TopicSessionHelper {
         context.close();
         tconnection.close();
     }
+
+    public void subscribeMessageListener(MessageListener messageListener, String nameTopic){
+
+    }
 }
