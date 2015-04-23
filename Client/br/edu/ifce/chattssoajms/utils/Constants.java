@@ -9,4 +9,5 @@ public class Constants {
             "email: jpsilvaj@gmail.com\n" +
             "Data: 2015/04/13\n"+
             "Version: 0.1";
+    public static final String TOPIC_DEFAULT="topic1";
 }
