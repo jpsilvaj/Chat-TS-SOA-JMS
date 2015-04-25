@@ -1,14 +1,11 @@
-package br.edu.ifce.chat.commons.utils;
+package br.edu.ifce.chat.client.handler;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-/**
- * Created by jp-desktop on 13/04/2015.
- */
-public class ChatListener implements ActionListener, WindowListener {
+public class ChatClientListener implements ActionListener, WindowListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {

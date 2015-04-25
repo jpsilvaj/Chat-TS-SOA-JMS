@@ -9,6 +9,7 @@ import br.edu.ifce.chat.commons.utils.ChatListener;
 import br.edu.ifce.chat.commons.view.ChatMenuPanel;
 import br.edu.ifce.chat.commons.view.ChatPanel;
 import br.edu.ifce.chat.commons.view.ListOfUsersPanel;
+import br.edu.ifce.chat.mediator.handler.ChatMediatorListener;
 import br.edu.ifce.chat.mediator.handler.MenuListener;
 
 /**
@@ -18,7 +19,7 @@ public class MediatorView extends JFrame{
     private static final long serialVersionUID = -7716037243160876089L;
     //private ClientImpl client;
     private ChatMenuPanel chatMenuPanel;
-    private ChatPanel chatPanel = new ChatPanel();
+    private ChatPanel chatPanel = new ChatPanel(new ChatMediatorListener());
     private ListOfUsersPanel listOfUsersPanel = new ListOfUsersPanel();
 
     public MediatorView(){
@@ -28,7 +29,6 @@ public class MediatorView extends JFrame{
         this.setVisible(true);
         this.setResizable(false);
         this.setNameClient();
-        this.setTitle("Chat client - Tuple Space - SOA - JMS : " /*TODO:Conc with username*/);
         this.addPanels();
         this.pack();
         this.addWindowListener(new ChatListener());

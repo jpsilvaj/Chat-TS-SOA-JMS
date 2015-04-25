@@ -5,6 +5,7 @@ import java.awt.Container;
 import javax.swing.JFrame;
 
 import net.miginfocom.swing.MigLayout;
+import br.edu.ifce.chat.client.handler.ChatClientListener;
 import br.edu.ifce.chat.client.handler.MenuListener;
 import br.edu.ifce.chat.commons.utils.ChatListener;
 import br.edu.ifce.chat.commons.view.ChatMenuPanel;
@@ -19,7 +20,7 @@ public class ChatClientView  extends JFrame{
         private static final long serialVersionUID = -7716037243160876089L;
         //private ClientImpl client;
         private ChatMenuPanel chatMenuPanel;
-        private ChatPanel chatPanel = new ChatPanel();
+        private ChatPanel chatPanel = new ChatPanel( new ChatClientListener());
         private ListOfUsersPanel listOfUsersPanel = new ListOfUsersPanel();
 
         public ChatClientView(){
