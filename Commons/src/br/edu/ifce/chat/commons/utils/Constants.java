@@ -5,7 +5,7 @@ package br.edu.ifce.chat.commons.utils;
  */
 public class Constants {
     public static final String ABOUT = "Chat - Tuple Space + SOA + JMS\n\n" +
-            "Autor: Jo�o Paulo da Silva J�nior\n" +
+            "Autor: João Paulo da Silva Júnior\n" +
             "email: jpsilvaj@gmail.com\n" +
             "Data: 2015/04/13\n"+
             "Version: 0.1";

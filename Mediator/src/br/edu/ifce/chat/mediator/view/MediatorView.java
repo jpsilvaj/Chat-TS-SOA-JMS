@@ -30,6 +30,8 @@ public class MediatorView extends JFrame{
         this.setResizable(false);
         this.setNameClient();
         this.addPanels();
+        this.chatPanel.remove(1);
+        this.revalidate();
         this.pack();
         this.addWindowListener(new ChatListener());
     }

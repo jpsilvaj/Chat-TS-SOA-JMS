@@ -1,36 +1,44 @@
 package br.edu.ifce.chat.client.controller;
 
-import br.edu.ifce.chat.client.bean.Message;
-import br.edu.ifce.chat.client.bean.User;
-import br.edu.ifce.chat.client.view.ChatClientView;
-import net.jini.core.discovery.LookupLocator;
-import net.jini.core.lookup.ServiceItem;
-import net.jini.core.lookup.ServiceRegistrar;
-import net.jini.core.lookup.ServiceTemplate;
-import net.jini.core.transaction.TransactionException;
-import net.jini.discovery.LookupDiscovery;
-import net.jini.lease.LeaseRenewalManager;
-import net.jini.lookup.ServiceDiscoveryManager;
-import net.jini.space.JavaSpace;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.rmi.RemoteException;
-import java.util.Calendar;
+
+import net.jini.core.discovery.LookupLocator;
+import net.jini.core.lookup.ServiceRegistrar;
+import br.edu.ifce.chat.client.bean.Message;
+import br.edu.ifce.chat.client.view.ChatClientView;
 
 /**
  * Created by jp-desktop on 21/04/2015.
  */
 public class ChatClientController{
-    public static ChatClientView chatClientView;
-    public static JavaSpace javaSpace;
+    public ChatClientView chatClientView;
 
     public static void main(String[] args){
         startupSpaceConnection();
     }
 
-    private static void startupSpaceConnection() {
-
+    public static void startupSpaceConnection() {
+    	LookupLocator ll;
+	
+		try {
+			ll = new LookupLocator("jini://localhost:4160");
+			ServiceRegistrar sr;
+			sr = ll.getRegistrar();
+			System.out.println("Service Registrar: "+sr.getServiceID());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
     }
 
     public static void sendMessage(Message message) {

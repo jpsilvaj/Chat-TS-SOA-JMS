@@ -71,8 +71,9 @@ public class ChatPanel extends JPanel {
 		return historyMessage;
 	}
 
-	public void setHistoryMessage(JTextArea historyMessage) {
-		this.historyMessage = historyMessage;
+	public void setHistoryMessage(String historyMessage) {
+		this.historyMessage.setText(historyMessage);
+		this.validate();
 	}
 	
 	public JTextField getTextBox() {
