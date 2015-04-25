@@ -1,8 +1,8 @@
-package br.edu.ifce.chattssoajms.controller;
+package br.edu.ifce.chat.client.controller;
 
-import br.edu.ifce.chattssoajms.bean.Message;
-import br.edu.ifce.chattssoajms.bean.User;
-import br.edu.ifce.chattssoajms.view.ChatClientView;
+import br.edu.ifce.chat.client.bean.Message;
+import br.edu.ifce.chat.client.bean.User;
+import br.edu.ifce.chat.client.view.ChatClientView;
 import net.jini.core.discovery.LookupLocator;
 import net.jini.core.lookup.ServiceItem;
 import net.jini.core.lookup.ServiceRegistrar;

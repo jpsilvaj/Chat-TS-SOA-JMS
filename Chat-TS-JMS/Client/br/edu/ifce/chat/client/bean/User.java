@@ -1,4 +1,4 @@
-package br.edu.ifce.chattssoajms.bean;
+package br.edu.ifce.chat.client.bean;
 
 import net.jini.core.entry.Entry;
 

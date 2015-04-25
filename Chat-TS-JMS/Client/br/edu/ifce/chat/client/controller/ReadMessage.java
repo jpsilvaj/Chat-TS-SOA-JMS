@@ -1,9 +1,8 @@
-package br.edu.ifce.chattssoajms.controller;
+package br.edu.ifce.chat.client.controller;
 
 import net.jini.space.JavaSpace;
-import java.util.Scanner;
 
-public class WriteMessage {
+public class ReadMessage {
 
     public static void main(String[] args) {
         try {
@@ -15,18 +14,16 @@ public class WriteMessage {
                     System.exit(-1);
             } 
             System.out.println("O servico JavaSpace foi encontrado.");
-            
-            Scanner scanner = new Scanner(System.in);
+
             while (true) {
-                System.out.print("Entre com o texto da mensagem (ENTER para sair): ");
-                String message = scanner.nextLine();
-                if (message == null || message.equals("")) {
+                Message template = new Message();
+		template.name = "cidcley";
+                Message msg = (Message) space.take(template, null, 60 * 1000);
+                if (msg == null) {
+                    System.out.println("Tempo de espera esgotado. Encerrando...");
                     System.exit(0);
                 }
-                Message msg = new Message();
-                msg.content = message;
-		msg.name = "cidcley";
-                space.write(msg, null, 60 * 1000);
+                System.out.println("Mensagem recebida: "+ msg.content);
             }
         } catch (Exception e) {
             e.printStackTrace();

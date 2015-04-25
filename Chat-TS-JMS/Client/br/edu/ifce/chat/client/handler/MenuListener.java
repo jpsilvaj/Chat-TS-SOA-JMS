@@ -1,4 +1,4 @@
-package br.edu.ifce.chattssoajms.handler;
+package br.edu.ifce.chat.client.handler;
 
 import javax.swing.*;
 

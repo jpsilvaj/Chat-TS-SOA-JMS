@@ -1,4 +1,4 @@
-package br.edu.ifce.chattssoajms.controller;
+package br.edu.ifce.chat.client.controller;
 
 
 import java.io.IOException;

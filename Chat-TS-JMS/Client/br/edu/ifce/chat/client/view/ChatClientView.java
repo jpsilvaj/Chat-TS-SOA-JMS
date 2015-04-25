@@ -1,15 +1,15 @@
-package br.edu.ifce.chattssoajms.view;
+package br.edu.ifce.chat.client.view;
 
 import java.awt.Container;
 
 import javax.swing.JFrame;
 
 import net.miginfocom.swing.MigLayout;
+import br.edu.ifce.chat.client.handler.MenuListener;
 import br.edu.ifce.chat.commons.utils.ChatListener;
 import br.edu.ifce.chat.commons.view.ChatMenuPanel;
 import br.edu.ifce.chat.commons.view.ChatPanel;
 import br.edu.ifce.chat.commons.view.ListOfUsersPanel;
-import br.edu.ifce.chattssoajms.handler.MenuListener;
 
 
 /**

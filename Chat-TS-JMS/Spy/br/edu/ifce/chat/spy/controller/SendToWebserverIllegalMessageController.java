@@ -1,4 +1,4 @@
-package br.edu.ifce.chattssoajms.controller;
+package br.edu.ifce.chat.spy.controller;
 
 import br.edu.ifce.chat.webserver.controller.MessageWebServerController;
 import br.edu.ifce.chat.webserver.controller.MessageWebServerControllerImplService;

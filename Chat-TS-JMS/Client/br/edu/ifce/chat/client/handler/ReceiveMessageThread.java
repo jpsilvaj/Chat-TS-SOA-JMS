@@ -1,7 +1,7 @@
-package br.edu.ifce.chattssoajms.handler;
+package br.edu.ifce.chat.client.handler;
 
-import br.edu.ifce.chattssoajms.bean.Message;
-import br.edu.ifce.chattssoajms.bean.User;
+import br.edu.ifce.chat.client.bean.Message;
+import br.edu.ifce.chat.client.bean.User;
 import net.jini.core.entry.UnusableEntryException;
 import net.jini.core.transaction.TransactionException;
 import net.jini.space.JavaSpace;

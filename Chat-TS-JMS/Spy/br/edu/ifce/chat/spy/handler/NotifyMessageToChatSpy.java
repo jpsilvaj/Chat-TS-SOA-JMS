@@ -1,9 +1,10 @@
-package br.edu.ifce.chattssoajms.handler;
+package br.edu.ifce.chat.spy.handler;
 
-import br.edu.ifce.chattssoajms.bean.Message;
+import br.edu.ifce.chat.client.bean.Message;
 import net.jini.core.event.RemoteEvent;
 import net.jini.core.event.RemoteEventListener;
 import net.jini.core.event.UnknownEventException;
+
 import java.rmi.RemoteException;
 
 /**
