@@ -8,7 +8,11 @@ import java.util.Date;
  */
 public class Message implements Entry{
 
-    public String sender;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4306927694562149253L;
+	public String sender;
     public String receiver;
     public String message;
     public Date date;
