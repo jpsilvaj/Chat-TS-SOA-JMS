@@ -30,7 +30,9 @@ public class ReceiveMessageThread extends TimerTask {
         
         try {
 			Message msg = (Message) space.take(template, null, 1 * 1000);
-			ChatClientController.receiveMessage();
+			if(msg != null){
+				ChatClientController.receiveMessage(msg);	
+			}
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

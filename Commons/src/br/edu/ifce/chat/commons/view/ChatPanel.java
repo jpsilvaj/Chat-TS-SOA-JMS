@@ -83,4 +83,8 @@ public class ChatPanel extends JPanel {
 	public void setTextBox(JTextField textBox) {
 		this.textBox = textBox;
 	}
+
+	public void addMessageToPanel(String message) {
+		this.historyMessage.append(message);
+	}
 }

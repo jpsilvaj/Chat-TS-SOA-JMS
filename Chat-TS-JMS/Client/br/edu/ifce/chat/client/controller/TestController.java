@@ -17,7 +17,7 @@ import br.edu.ifce.chat.commons.utils.DateUtils;
 /**
  * Created by jp-desktop on 21/04/2015.
  */
-public class ChatClientController{
+public class TestController{
     private static ChatClientView chatClientView;
     private static JavaSpace space;
     private static Timer timerReceiveMessage;
@@ -27,11 +27,10 @@ public class ChatClientController{
     
     public static void main(String[] args){
     	startSpaceConnection();
-    	setChatClientView(new ChatClientView());
-    	updateListOfUsersConnected();
+    	
     }
 
-	public static void startSpaceConnection() {
+    public static void startSpaceConnection() {
     	if(!isConnected){
 	    	try {
 	    		User user = new User();
@@ -44,9 +43,12 @@ public class ChatClientController{
 	                    System.exit(-1);
 	            } 
 	            System.out.println("JavaSpace service has been found.");
-	            
-	            timerReceiveMessage = new Timer();
-	        	timerReceiveMessage.schedule(new ReceiveMessageThread(username, space), 0,60*1000);
+	            Message message = new Message();
+	            message.sender = "jp";
+	            message.receiver = "manu";
+	            message.message = "ola mundo";
+	            message.date = Calendar.getInstance().getTime();
+	            space.write(message, null, 60*1000);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
@@ -102,14 +104,9 @@ public class ChatClientController{
 	}
 
 	public static void setChatClientView(ChatClientView chatClientView) {
-		ChatClientController.chatClientView = chatClientView;
+		TestController.chatClientView = chatClientView;
 	}
     
-    private static void updateListOfUsersConnected() {
-		// TODO Auto-generated method stub
-		
-	}
-	
     private static boolean verifyIfUsernameAlreadyExists(User user){
     	
     	try {

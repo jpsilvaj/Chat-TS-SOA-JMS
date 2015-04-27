@@ -17,10 +17,9 @@ import br.edu.ifce.chat.mediator.handler.MenuListener;
  */
 public class MediatorView extends JFrame{
     private static final long serialVersionUID = -7716037243160876089L;
-    //private ClientImpl client;
     private ChatMenuPanel chatMenuPanel;
     private ChatPanel chatPanel = new ChatPanel(new ChatMediatorListener());
-    private ListOfUsersPanel listOfUsersPanel = new ListOfUsersPanel();
+    //private ListOfUsersPanel listOfUsersPanel = new ListOfUsersPanel();
 
     public MediatorView(){
         super("Mediator");
@@ -41,7 +40,7 @@ public class MediatorView extends JFrame{
         Container c = getContentPane();
         c.setLayout(new MigLayout("insets 15 15 15 15"));
         c.add(chatMenuPanel,"dock north");
-        c.add(listOfUsersPanel,"dock east, gapright 15, gapbottom 20");
+        //c.add(listOfUsersPanel,"dock east, gapright 15, gapbottom 20");
         c.add(chatPanel,"span");
     }
 
@@ -65,11 +64,11 @@ public class MediatorView extends JFrame{
         this.chatPanel = chatPanel;
     }
 
-    public ListOfUsersPanel getListOfUsersPanel() {
+    /*public ListOfUsersPanel getListOfUsersPanel() {
         return listOfUsersPanel;
     }
 
     public void setListOfUsersPanel(ListOfUsersPanel listOfUsersPanel) {
         this.listOfUsersPanel = listOfUsersPanel;
-    }
+    }*/
 }
