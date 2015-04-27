@@ -21,7 +21,7 @@ public class ListOfUsersPanel extends JPanel {
 	
 	public ListOfUsersPanel(MouseListener mouseListener){
 		initListUsersPanel();
-		mouseListener = mouseListener;
+		this.mouseListener = mouseListener;
 	}
 	
 	private void initListUsersPanel(){
@@ -56,6 +56,7 @@ public class ListOfUsersPanel extends JPanel {
 		userleLabel.setVisible(true);
 		userleLabel.addMouseListener(mouseListener);
 		listOfUsers.add(userleLabel);
+		this.validate();
 	}
 	
 	public void removeAllUsers(){

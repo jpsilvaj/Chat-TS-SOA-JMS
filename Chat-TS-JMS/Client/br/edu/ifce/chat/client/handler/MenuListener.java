@@ -1,11 +1,12 @@
 package br.edu.ifce.chat.client.handler;
 
-import javax.swing.*;
 
+import br.edu.ifce.chat.client.controller.ChatClientController;
 import br.edu.ifce.chat.commons.utils.Constants;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
 
 /**
  * Created by jp-desktop on 13/04/2015.
@@ -25,10 +26,10 @@ public class MenuListener implements ActionListener {
             }
         }
         else if(e.getActionCommand() == "connect"){
-
+        	JOptionPane.showMessageDialog(null, "Not implemented");
         }
         else if(e.getActionCommand() == "disconnect"){
-
+        	JOptionPane.showMessageDialog(null, "Not implemented");
         }
         else if(e.getActionCommand() == "about"){
         	JOptionPane.showMessageDialog(null, Constants.ABOUT);

@@ -17,4 +17,19 @@ public class User implements Entry{
 
     public User(){
     }
+    
+    @Override
+    public boolean equals(Object O){
+    	if(O != null && O instanceof User){
+	    	User newUser = (User) O;
+	    	if(newUser.username.equals(this.username)){
+	    		return true;
+	    	}
+    	}
+		return false;
+    }
+    
+    /*public hashcode(){
+    	
+    }*/
 }

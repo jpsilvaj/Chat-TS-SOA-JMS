@@ -84,8 +84,10 @@ public class ChatClientView  extends JFrame{
 		}
 		
 		public void updateListOfUsers(List<User> users){
+			listOfUsersPanel.removeAllUsers();
 			for(User user : users){
-				listOfUsersPanel.addUserToPanel(user.username);
+				if(!user.username.equals(username))
+					listOfUsersPanel.addUserToPanel(user.username);
 			}
 		}
 		public void addMessageToPanel(String message){

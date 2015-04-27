@@ -5,6 +5,7 @@ import java.rmi.MarshalledObject;
 import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.List;
+
 import net.jini.core.entry.UnusableEntryException;
 import net.jini.core.event.EventRegistration;
 import net.jini.core.lease.Lease;
@@ -74,7 +75,7 @@ public class SpyController {
 		EventRegistration myReg = 
 				space.notify(message, null,
 						notifyListener.getStub(),
-						30000,
+						1000,
 						new MarshalledObject(new Integer(12345)));
 
 		manager.renewFor(myReg.getLease(), Lease.FOREVER,

@@ -17,22 +17,26 @@ public class ReceiveMessageThread extends TimerTask {
 
     private String username;
     private JavaSpace space;
+    private Message template;
 
     public ReceiveMessageThread(String username, JavaSpace space){
         this.username = username;
         this.space = space;
+        this.template = new Message();
+        this.template.receiver = username;
     }
 
     @Override
     public void run() {
-        Message template = new Message();
-        template.receiver = username;
-        
+    	Message msg;
         try {
-			Message msg = (Message) space.take(template, null, 1 * 1000);
-			if(msg != null){
-				ChatClientController.receiveMessage(msg);	
-			}
+			do{
+				msg = (Message) space.take(template, null, 1 * 1000);
+				if(msg != null){
+					ChatClientController.receiveMessage(msg);	
+				}	
+			}while(msg != null);
+        	
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
