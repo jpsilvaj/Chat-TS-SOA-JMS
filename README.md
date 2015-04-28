@@ -6,6 +6,7 @@ Os serviços do Apache River e do OpenJMS devem ser iniciados antes da utilizaç
 O padrão utilizado para o desenvolvimento foi o MVC. Então os pacotes estão estruturados da forma orientada. Basta seguir o padrão que é possível encontrar as classes por suas responsabilidades.
 
 A ordem de exucação padrão é listada abaixo:
+
 1. Webserver.jar(PublishTopicMessageWebServerController)
 2. Mediator.jar(MediatorController)
 3. Spy.jar(SpyController)
